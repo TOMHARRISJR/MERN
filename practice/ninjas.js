@@ -23,4 +23,26 @@ class Ninja{
 
 const ninja1 = new Ninja("Hyabusa",100);
 
-console.log(`${ninja1.sayName()}\n${ninja1.showStats()}\n${ninja1.drinkSake()}`)
+
+class Sensei extends Ninja{
+    constructor(name,health = 200, speed = 10, strength = 10, wisdom = 10){
+        super(name,health,speed,strength)
+        
+        this.wisdom = wisdom
+    }
+    
+    speakWisdom() {
+        this.drinkSake()
+        return `${this.health}\nWhat one programmer can do in one month, two programmers can do in two months.`
+
+    }
+
+}
+
+
+const superSensei = new Sensei("Master Splinter");
+
+
+
+
+console.log(`${superSensei.sayName()}\n${superSensei.showStats()}\n${superSensei.drinkSake()}\n${superSensei.speakWisdom()}`)
